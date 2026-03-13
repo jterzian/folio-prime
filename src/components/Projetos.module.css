@@ -1,14 +1,13 @@
 .projetos {
   padding: 80px 10%;
-  background-color: var(--bg-primary);
+  background-color: #f4f4f4;
 }
 
 .tituloSecao {
   font-size: 2.5rem;
-  font-weight: 700;
   margin-bottom: 50px;
   text-align: center;
-  color: var(--text-primary);
+  color: #1a1a1a;
 }
 
 .grid {
@@ -17,18 +16,25 @@
   gap: 30px;
 }
 
+.linkCard {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card {
-  background: var(--bg-card);
+  background: white;
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(110, 0, 255, 0.15);
 }
 
 .containerImg {
@@ -41,7 +47,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
 }
 
 .card:hover .imagem {
@@ -50,30 +56,38 @@
 
 .info {
   padding: 25px;
+  flex-grow: 1;
 }
 
 .info h3 {
+  font-size: 1.5rem;
   margin-bottom: 10px;
-  font-size: 1.4rem;
+  transition: color 0.3s ease;
 }
 
-.info p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
+.card:hover h3 {
+  color: #6e00ff;
 }
 
 .tags {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
 }
 
+/* AQUI ESTAVA O ERRO: FECHEI O BLOCO CORRETAMENTE */
 .tags span {
-  background: #f0f0f5;
-  color: var(--accent);
+  background: rgba(110, 0, 255, 0.1);
+  color: #6e00ff;
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

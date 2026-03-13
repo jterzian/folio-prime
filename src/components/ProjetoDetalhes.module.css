@@ -1,0 +1,125 @@
+.container {
+  padding: 120px 10% 80px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.voltar {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito sutil no "Voltar" */
+.voltar:hover {
+  transform: translateX(-5px); /* Move levemente para a esquerda */
+  color: #5500cc;
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.tags span {
+  background: rgba(110, 0, 255, 0.1);
+  color: var(--accent);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+}
+
+.capa {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+/* A foto do projeto também dá uma leve aumentada no hover */
+.capa:hover {
+  transform: scale(1.02);
+}
+
+.texto h2 {
+  margin-bottom: 20px;
+}
+
+.texto p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.acoes {
+  display: flex;
+  gap: 20px;
+}
+
+/* --- BOTÕES COM EFEITO DE LEVITAR --- */
+.btnPrincipal {
+  background: var(--accent);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btnPrincipal:hover {
+  transform: translateY(-5px);
+  background-color: #5500cc;
+  box-shadow: 0 10px 20px rgba(110, 0, 255, 0.3);
+}
+
+.btnSecundario {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 13px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btnSecundario:hover {
+  transform: translateY(-5px);
+  background-color: var(--accent);
+  color: white; /* Inverte a cor para dar destaque */
+  box-shadow: 0 10px 20px rgba(110, 0, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .conteudo { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .acoes {
+    flex-direction: column;
+  }
+  
+  .btnPrincipal, .btnSecundario {
+    text-align: center;
+  }
+}

@@ -1,0 +1,62 @@
+.sobre {
+  padding: 80px 10%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+}
+
+.fotoArea {
+  flex-shrink: 0;
+}
+
+.foto {
+  width: 320px; /* Tamanho da primeira versão */
+  height: 320px;
+  border-radius: 25px; /* Bordas levemente arredondadas */
+  object-fit: cover;
+  /* ESSA É A SOMBRA QUE VOCÊ GOSTOU */
+  box-shadow: 18px 18px 0px #6e00ff; 
+  transition: all 0.3s ease;
+}
+
+.foto:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 25px 25px 0px #6e00ff;
+}
+
+.textoArea h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.textoArea p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.sociais {
+  display: flex;
+  gap: 25px;
+}
+
+.sociais a {
+  color: #6e00ff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .container { flex-direction: column; text-align: center; }
+  .foto { width: 250px; height: 250px; box-shadow: 10px 10px 0px #6e00ff; }
+}

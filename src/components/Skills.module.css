@@ -1,0 +1,70 @@
+.skills {
+  padding: 80px 10%;
+  background-color: #f9f9f9; /* Um cinza bem leve para o card branco destacar */
+  text-align: center;
+}
+
+.tituloSecao {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  /* Cria colunas responsivas automaticamente */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  /* Sombra suave para o estado normal */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border-bottom: 5px solid #6e00ff; /* Sua cor roxa da identidade */
+  
+  /* --- NOVO: ANIMAÇÃO DE TRANSIÇÃO --- */
+  /* Isso garante que qualquer mudança (sombra, posição, cor) 
+     ocorra de forma suave em 0.3 segundos, não num "pulo" */
+  transition: all 0.3s ease;
+  
+  cursor: default; /* Mostra que não é um link clicável */
+}
+
+/* --- NOVO: EFEITO AO PASSAR O MOUSE (HOVER) --- */
+.card:hover {
+  /* 1. Efeito de levitar: sobe o card 10px */
+  transform: translateY(-10px);
+  
+  /* 2. Efeito de destaque: sombra fica maior e mais escura */
+  box-shadow: 0 15px 30px rgba(110, 0, 255, 0.2); 
+  
+  /* 3. Efeito de cor: Mudar a cor do fundo do card para o roxo */
+  background-color: #6e00ff;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #6e00ff; /* Título roxo no estado normal */
+  transition: color 0.3s ease; /* Transição suave para a cor do texto tbm */
+}
+
+/* --- NOVO: MUDAR A COR DO TEXTO NO HOVER --- */
+/* Quando o mouse estiver no .card, o h3 lá dentro muda de cor */
+.card:hover h3 {
+  color: white; /* Título fica branco no fundo roxo */
+}
+
+.card p {
+  color: #666; /* Texto secundário cinza */
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+/* Quando o mouse estiver no .card, o p lá dentro muda de cor */
+.card:hover p {
+  color: rgba(255, 255, 255, 0.8); /* Texto fica branco com transparência */
+}
