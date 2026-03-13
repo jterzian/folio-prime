@@ -1,37 +1,42 @@
-import imgAgencia from '../../assets/projects/agencia/agencia-criativa-home.jpg';
-import imgPetStyle from '../../assets/projects/Pet&Style/pet$style-home.jpg';
-import imgReact from '../../assets/projects/React Avançado/React-avançado-funcionalidades.jpg';
+import imgAgencia1 from '../../assets/projects/agencia/agencia-criativa-home.jpg';
+import imgAgencia2 from '../../assets/projects/agencia/agencia-criativa-sobre-nos.jpg';
+import imgAgencia3 from '../../assets/projects/agencia/agencia-criativa-depoimentos.jpg';
 
-// O segredo está nessa palavra "export" antes do const
+import petHome from '../../assets/projects/Pet&Style/petstyle-home.jpg';
+import petDestaques from '../../assets/projects/Pet&Style/petstyle-destaques-da-semana.jpg';
+import petDepoimentos from '../../assets/projects/Pet&Style/petstyle-depoimentos-contato.jpg';
+
+import reactFuncional from '../../assets/projects/React Avançado/react-avancado-funcionalidades.jpg';
+import reactFeitas from '../../assets/projects/React Avançado/react-avancado-funcionalidades-feitas.jpg';
+// Lembre-se de renomear esse arquivo na pasta para pendentes.jpg se der erro!
+import reactPendentes from '../../assets/projects/React Avançado/pendentes.jpg';
+
 export const listaProjetos = [
   {
-    id: "agencia-criativa",
+    id: 1,
     titulo: "Agência Criativa",
-    capa: imgAgencia,
-    resumo: "Uma landing page de alta performance.",
-    descricao: "Desenvolvida com foco em conversão e design minimalista.",
+    resumo: "Landing page de alta performance.",
+    descricao: "Desenvolvida com foco em conversão e design minimalista, utilizando React e CSS Modules.",
     tecnologias: ["React", "CSS Modules"],
-    linkGithub: "#",
-    linkDeploy: "#"
+    imagens: [imgAgencia1, imgAgencia2, imgAgencia3],
+    linkGithub: "https://github.com/jterzian/agencia-criativa"
   },
   {
-    id: "pet-style",
+    id: 2,
     titulo: "Pet & Style",
-    capa: imgPetStyle,
     resumo: "E-commerce para petshops.",
-    descricao: "Sistema de agendamento e vitrine de produtos.",
+    descricao: "Sistema de agendamento e vitrine de produtos com interface amigável.",
     tecnologias: ["React", "Styled Components"],
-    linkGithub: "#",
-    linkDeploy: "#"
+    imagens: [petHome, petDestaques, petDepoimentos],
+    linkGithub: "https://github.com/jterzian/petstyle-loja-virtual"
   },
   {
-    id: "react-avancado",
+    id: 3,
     titulo: "React Avançado",
-    capa: imgReact,
-    resumo: "Plataforma de estudos.",
-    descricao: "Gestão de estado complexa e performance otimizada.",
+    resumo: "Plataforma de gestão.",
+    descricao: "Gestão de estado complexa e performance otimizada com Hooks e Context API.",
     tecnologias: ["React", "Hooks"],
-    linkGithub: "#",
-    linkDeploy: "#"
+    imagens: [reactFuncional, reactFeitas, reactPendentes],
+    linkGithub: "https://github.com/jterzian/todo-react-pro"
   }
 ];

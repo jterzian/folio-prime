@@ -1,180 +1,207 @@
-/* src/components/Projetos.module.css */
-
-.projetos {
-  padding: 80px 10%;
-  background-color: #ffffff;
-  text-align: center;
+.secaoProjetos { 
+  padding: 80px 10%; 
+  background: #fff; 
+  text-align: center; 
 }
 
-.tituloSecao {
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 50px;
-  color: #1a1a1a;
+.tituloGeral { 
+  font-size: 2.5rem; 
+  font-weight: 800; 
+  margin-bottom: 50px; 
+  text-transform: uppercase;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
 
-/* --- CARD PRINCIPAL --- */
+/* --- CARD COM EFEITO HOVER --- */
 .card {
   background: white;
-  border: 3px solid #1a1a1a;
+  border: 4px solid #1a1a1a;
   border-radius: 20px;
-  /* Sombra inicial preta */
-  box-shadow: 10px 10px 0px #1a1a1a; 
+  box-shadow: 10px 10px 0px #1a1a1a;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  
-  /* ESSENCIAL PARA O EFEITO SUTIL */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  position: relative;
 }
 
-/* --- O EFEITINHO BÁSICO (HOVER) --- */
 .card:hover {
-  /* Faz o card subir 5px e ir 5px para a esquerda */
-  transform: translate(-5px, -5px); 
-  
-  /* Aumenta a sombra e muda para ROXO */
-  box-shadow: 18px 18px 0px #6e00ff; 
+  transform: translate(-5px, -5px);
+  box-shadow: 15px 15px 0px #6e00ff;
 }
 
-/* --- EFEITO ZOOM NA IMAGEM --- */
-.containerImagem {
-  width: 100%;
-  height: 220px;
-  border-bottom: 3px solid #1a1a1a;
-  overflow: hidden; /* Garante que o zoom não saia do box */
+/* --- ÁREA DA IMAGEM --- */
+.areaImagem { 
+  position: relative; 
+  width: 100%; 
+  height: 250px; /* Aumentei um pouco para destaque */
+  border-bottom: 4px solid #1a1a1a; 
+  overflow: hidden;
 }
 
-.capa {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
-  /* Prepara a imagem para o zoom */
-  transition: transform 0.5s ease; 
+.capa { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.5s ease;
 }
 
-/* Quando passa o mouse no CARD, a IMAGEM dá zoom */
 .card:hover .capa {
-  transform: scale(1.1); /* Zoom de 10% */
+  transform: scale(1.05);
 }
 
-/* --- RESTANTE DO ESTILO (MANTIDO) --- */
-.info {
-  padding: 25px;
-  text-align: left;
-  flex-grow: 1;
+.setaCard {
+  position: absolute; 
+  right: 15px; 
+  top: 50%; 
+  transform: translateY(-50%);
+  background: #6e00ff; 
+  color: white; 
+  border: 3px solid #1a1a1a;
+  padding: 8px 12px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-weight: 900;
+  box-shadow: 2px 2px 0px #1a1a1a;
+  z-index: 5;
+}
+
+/* --- CONTEÚDO (Onde resolvemos o "juntinho") --- */
+.corpo { 
+  padding: 25px; /* Mais espaço interno aqui */
+  text-align: left; 
   display: flex;
   flex-direction: column;
+  gap: 15px; /* Espaço entre título, tags e botão */
 }
 
-.info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #1a1a1a;
+.corpo h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
 }
 
-.tags {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+.tags { 
+  display: flex; 
+  gap: 10px; 
+  flex-wrap: wrap; 
 }
 
-.tags span {
-  background: #eee;
-  padding: 5px 12px;
-  border: 1px solid #1a1a1a;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
+.tags span { 
+  background: #f0f0f0; 
+  border: 2px solid #1a1a1a; 
+  padding: 5px 12px; 
+  border-radius: 8px; 
+  font-weight: 700; 
+  font-size: 0.8rem; 
+}
+
+.btnDetalhes {
+  width: 100%; 
+  padding: 12px; 
+  background: white; 
+  border: 3px solid #1a1a1a;
+  border-radius: 12px; 
+  font-weight: 800; 
+  cursor: pointer; 
+  transition: 0.2s;
+  box-shadow: 0px 4px 0px #1a1a1a;
+  margin-top: 5px;
+}
+
+.btnDetalhes:hover { 
+  background: #1a1a1a; 
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px #1a1a1a;
+}
+
+/* --- MODAL --- */
+.modalOverlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.85); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 1000; 
+  backdrop-filter: blur(5px);
+}
+
+.modalContent { 
+  background: white; 
+  width: 90%; 
+  max-width: 500px; 
+  border: 4px solid #1a1a1a; 
+  border-radius: 25px; 
+  position: relative; 
+  overflow: hidden; 
+  box-shadow: 20px 20px 0px #1a1a1a;
+}
+
+.imgModal { 
+  width: 100%; 
+  height: 250px; 
+  object-fit: cover; 
+  border-bottom: 4px solid #1a1a1a; 
+}
+
+.detalhesTexto { 
+  padding: 30px; 
+  text-align: left; 
+}
+
+.detalhesTexto h3 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
+
+.detalhesTexto p { 
+  margin: 15px 0 25px; 
+  line-height: 1.6; 
+  color: #333; 
+  font-weight: 500;
 }
 
 .btnRepo {
-  margin-top: auto;
-  width: 100%;
-  padding: 12px;
-  background: white;
-  color: #1a1a1a;
-  border: 3px solid #1a1a1a;
-  border-radius: 10px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  display: block; 
+  text-align: center; 
+  padding: 15px; 
+  background: #6e00ff; 
+  color: white !important;
+  text-decoration: none; 
+  font-weight: 800; 
+  border: 3px solid #1a1a1a; 
+  border-radius: 15px; 
+  box-shadow: 5px 5px 0px #1a1a1a;
+  transition: 0.2s;
 }
 
 .btnRepo:hover {
-  background: #1a1a1a;
-  color: white;
-}
-
-/* --- ESTILOS DO MODAL (MANTIDOS) --- */
-.modalOverlay {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: flex; align-items: center; justify-content: center;
-  z-index: 1000;
-  animation: modalFadeIn 0.3s ease;
-}
-
-@keyframes modalFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.modalContent {
-  background: white;
-  width: 90%; max-width: 650px;
-  border: 4px solid #1a1a1a;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  animation: modalEntrada 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes modalEntrada {
-  from { transform: scale(0.8) translateY(50px); opacity: 0; }
-  to { transform: scale(1) translateY(0); opacity: 1; }
-}
-
-.fechar {
-  position: absolute; top: 15px; right: 15px;
-  background: #1a1a1a; color: white;
-  border: none; padding: 8px 14px; border-radius: 8px;
-  cursor: pointer; font-weight: bold; z-index: 10;
-}
-
-.fechar:hover { background: #6e00ff; }
-
-.detalhesTexto { padding: 30px; text-align: left; }
-.detalhesTexto h3 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; color: #1a1a1a; }
-.detalhesTexto p { line-height: 1.7; margin-bottom: 30px; color: #444; font-size: 1.1rem; }
-
-.botoesModal { margin-top: auto; }
-.btnLinkReal {
-  display: inline-block;
-  padding: 14px 30px;
-  background: #6e00ff;
-  color: white !important;
-  text-decoration: none;
-  font-weight: 800;
-  border: 3px solid #1a1a1a;
-  border-radius: 12px;
-  box-shadow: 5px 5px 0px #1a1a1a;
-  transition: all 0.2s ease;
-}
-
-.btnLinkReal:hover {
-  transform: translate(-2px, -2px);
+  transform: translate(-3px, -3px);
   box-shadow: 8px 8px 0px #1a1a1a;
-  background: #5a00d1;
+}
+
+.fechar { 
+  position: absolute; 
+  top: 15px; 
+  right: 15px; 
+  background: #ff4136; 
+  color: white; 
+  border: 3px solid #1a1a1a; 
+  width: 35px; 
+  height: 35px; 
+  border-radius: 50%; 
+  cursor: pointer; 
+  font-weight: 900; 
+  z-index: 10; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
