@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); /* Efeito vidro da Apple */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navList a {
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.3s;
+}
+
+.navList a:hover {
+  color: var(--accent);
+}
+
+.btnContato {
+  background: var(--accent);
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
