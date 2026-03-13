@@ -1,55 +1,92 @@
 .hero {
-  padding: 120px 10%;
+  height: 90vh;
   display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--bg-primary);
-}
-
-.container {
-  max-width: 900px;
+  background-color: #ffffff;
+  padding: 0 10%;
 }
 
 .titulo {
-  font-size: 4rem;
-  font-weight: 800;
-  letter-spacing: -2px;
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 20px;
   line-height: 1.1;
-  color: var(--text-primary);
-  margin-bottom: 24px;
 }
 
-.destaque {
-  color: var(--accent);
+/* --- NOVO EFEITO: GLOW NEON SOFISTICADO --- */
+.textoDestaque {
+  color: #6e00ff; /* MANTÉM SEU ROXO */
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.textoDestaque:hover {
+  /* Cria um brilho roxo suave em volta das letras */
+  text-shadow: 
+    0 0 10px rgba(110, 0, 255, 0.5),
+    0 0 20px rgba(110, 0, 255, 0.3);
+  
+  /* Faz o texto subir 2 pixels, dando sensação de leveza */
+  transform: translateY(-2px);
+  
+  /* Dá uma leve aumentada na saturação da cor */
+  filter: brightness(1.2);
 }
 
 .subtitulo {
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
+  font-size: 1.6rem;
+  color: #555;
+  margin-bottom: 45px;
+}
+
+.acoes {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
 }
 
 .btnPrincipal {
-  background: var(--text-primary);
+  padding: 16px 38px;
+  background-color: #6e00ff;
   color: white;
-  padding: 15px 35px;
-  border-radius: 30px;
-  font-weight: 600;
-  margin-right: 15px;
-  transition: transform 0.2s;
-}
-
-.btnSecundario {
-  color: var(--accent);
-  font-weight: 600;
-  border-bottom: 2px solid transparent;
-  transition: border 0.3s;
-}
-
-.btnSecundario:hover {
-  border-bottom: 2px solid var(--accent);
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 15px;
+  border: 3px solid #1a1a1a;
+  box-shadow: 8px 8px 0px #1a1a1a;
+  transition: all 0.2s ease;
 }
 
 .btnPrincipal:hover {
-  transform: scale(1.05);
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px #1a1a1a;
+}
+
+.btnSecundario {
+  padding: 16px 38px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 15px;
+  border: 3px solid #1a1a1a;
+  box-shadow: 8px 8px 0px #1a1a1a;
+  transition: all 0.2s ease;
+}
+
+.btnSecundario:hover {
+  transform: translate(-4px, -4px);
+  background-color: #6e00ff;
+  color: #ffffff;
+  box-shadow: 12px 12px 0px #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .titulo { font-size: 2.8rem; }
+  .acoes { flex-direction: column; }
 }

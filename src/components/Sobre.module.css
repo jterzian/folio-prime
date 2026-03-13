@@ -1,15 +1,16 @@
 .sobre {
-  padding: 80px 10%;
+  padding: 100px 10%; /* Mantém o padrão de respiro das laterais */
   background-color: #ffffff;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
 }
 
 .container {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 60px;
   max-width: 1100px;
+  width: 100%;
 }
 
 .fotoArea {
@@ -17,46 +18,68 @@
 }
 
 .foto {
-  width: 320px; /* Tamanho da primeira versão */
-  height: 320px;
-  border-radius: 25px; /* Bordas levemente arredondadas */
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
   object-fit: cover;
-  /* ESSA É A SOMBRA QUE VOCÊ GOSTOU */
-  box-shadow: 18px 18px 0px #6e00ff; 
+  box-shadow: 15px 15px 0px #6e00ff;
   transition: all 0.3s ease;
+  border: 3px solid #1a1a1a;
 }
 
 .foto:hover {
   transform: translate(-5px, -5px);
-  box-shadow: 25px 25px 0px #6e00ff;
+  box-shadow: 22px 22px 0px #6e00ff;
+}
+
+.textoArea {
+  text-align: left; /* Garante que o texto comece na esquerda */
 }
 
 .textoArea h2 {
   font-size: 2.8rem;
   margin-bottom: 20px;
   color: #1a1a1a;
+  font-weight: 800;
 }
 
 .textoArea p {
   font-size: 1.15rem;
   line-height: 1.8;
   color: #444;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .sociais {
   display: flex;
-  gap: 25px;
+  gap: 20px;
 }
 
-.sociais a {
-  color: #6e00ff;
+.btnSocial {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 800;
-  font-size: 1.1rem;
+  border: 3px solid #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0px #1a1a1a;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btnSocial:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px #6e00ff;
+  color: #6e00ff;
+  border-color: #6e00ff;
 }
 
 @media (max-width: 900px) {
+  .sobre { justify-content: center; }
   .container { flex-direction: column; text-align: center; }
-  .foto { width: 250px; height: 250px; box-shadow: 10px 10px 0px #6e00ff; }
+  .foto { width: 250px; height: 250px; }
+  .sociais { justify-content: center; }
+  .textoArea { text-align: center; }
 }

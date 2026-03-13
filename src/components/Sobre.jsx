@@ -17,8 +17,12 @@ export default function Sobre() {
             Estou expandindo meus horizontes para o desenvolvimento Front-end, unindo minha bagagem técnica de infra com a criação de interfaces modernas e eficientes usando React.
           </p>
           <div className={styles.sociais}>
-            <a href="https://github.com/jterzian" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/joaoterzian/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/jterzian" target="_blank" rel="noreferrer" className={styles.btnSocial}>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/joaoterzian/" target="_blank" rel="noreferrer" className={styles.btnSocial}>
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>
