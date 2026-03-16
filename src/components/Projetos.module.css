@@ -205,3 +205,38 @@
   align-items: center;
   justify-content: center;
 }
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+  .secaoProjetos {
+    padding: 60px 5%; /* Menos borda nas laterais no celular */
+  }
+
+  .tituloGeral {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Força 1 card por linha no celular */
+    gap: 25px;
+  }
+
+  .areaImagem {
+    height: 180px; /* Imagem um pouco menor no mobile */
+  }
+
+  /* Ajustes do Modal para Celular */
+  .modalContent {
+    width: 95%;
+    max-height: 90vh; /* Não deixa o modal sumir pra fora da tela */
+    overflow-y: auto; /* Permite scroll se o texto for longo */
+  }
+
+  .detalhesTexto h3 {
+    font-size: 1.5rem;
+  }
+
+  .detalhesTexto p {
+    font-size: 0.9rem;
+  }
+}
